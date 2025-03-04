@@ -1,0 +1,85 @@
+
+
+
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  clerkUserId  String   @unique
+  name      String?
+  imageUrl     String? 
+  password  String
+  company   String?
+  phone     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  orders    Order[]
+}
+
+model Order {
+  id               String           @id @default(cuid())
+  campaignName     String
+  productName      String
+  reelRequirements String
+  budget           Float
+  status           String           @default("Pending") // Pending, Active, Completed
+  date             DateTime         @default(now())
+  userId           String
+  user             User             @relation(fields: [userId], references: [id])
+  orderType        String           @default("Bulk") // Bulk, Budget, Influencer, Custom
+  influencers      Int              @default(0)
+  reels            Int              @default(0)
+  views            Int              @default(0)
+  description      String?
+  orderInfluencers OrderInfluencer[]
+  createdAt        DateTime         @default(now())
+  updatedAt        DateTime         @updatedAt
+}
+
+model Influencer {
+  id           String           @id @default(cuid())
+  name         String
+  username     String           @unique
+  avatar       String
+  grade        Int
+  followers    String
+  engagement   String
+  pricePerReel Float
+  niches       String[]
+  createdAt    DateTime         @default(now())
+  updatedAt    DateTime         @updatedAt
+  orders       OrderInfluencer[]
+}
+
+model OrderInfluencer {
+  id           String     @id @default(cuid())
+  orderId      String
+  influencerId String
+  order        Order      @relation(fields: [orderId], references: [id])
+  influencer   Influencer @relation(fields: [influencerId], references: [id])
+  createdAt    DateTime   @default(now())
+  updatedAt    DateTime   @updatedAt
+
+  @@unique([orderId, influencerId])
+}
+
+model Grade {
+  id           Int      @id
+  name         String
+  followers    String
+  engagement   String
+  pricePerReel Float
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
