@@ -51,7 +51,7 @@ const Navbar = () => {
             >
               brand
             </Link>
-            {/* <Link
+            <Link
               href="/creator"
               className={buttonVariants({
                 variant: "ghost",
@@ -59,7 +59,7 @@ const Navbar = () => {
               })}
             >
               Creator
-            </Link> */}
+            </Link>
             <Link
               href="/featured/page"
               className={buttonVariants({
