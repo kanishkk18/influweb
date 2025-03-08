@@ -41,10 +41,10 @@ export default function Home() {
         background: "radial-gradient(circle at center, #1E40AF, #000000)",
       }}
     >
-      <style jsx global>
+{/*       <style jsx global>
         {backgroundStyle}
       </style>
-      <div className="bg-pattern"></div>
+      <div className="bg-pattern"></div> */}
       <div className="content w-full">
        
     <div className="w-full max-w-xl mx-auto p-8 flex flex-col justify-between min-h-screen">
