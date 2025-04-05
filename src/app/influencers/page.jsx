@@ -20,7 +20,7 @@ const Influencers = () => {
       name: "Sarah Johnson",
       handle: "@sarahstyle",
       avatar: "https://xsgames.co/randomusers/avatar.php?g=female&i=1",
-      grade: "A",
+      grade: "Macro",
       niche: "Fashion",
       followers: "450K",
       engagement: "4.2%",
@@ -32,7 +32,7 @@ const Influencers = () => {
       name: "Michael Chen",
       handle: "@mikefitness",
       avatar: "https://xsgames.co/randomusers/avatar.php?g=male&i=2",
-      grade: "A+",
+      grade: "Celebrity Lite",
       niche: "Fitness",
       followers: "1.2M",
       engagement: "3.8%",
@@ -44,7 +44,7 @@ const Influencers = () => {
       name: "Emma Rodriguez",
       handle: "@emmafoodie",
       avatar: "https://xsgames.co/randomusers/avatar.php?g=female&i=3",
-      grade: "B+",
+      grade: "Macro",
       niche: "Food",
       followers: "280K",
       engagement: "5.1%",
@@ -56,7 +56,7 @@ const Influencers = () => {
       name: "David Park",
       handle: "@davidtech",
       avatar: "https://xsgames.co/randomusers/avatar.php?g=male&i=4",
-      grade: "A",
+      grade: "Mega",
       niche: "Technology",
       followers: "520K",
       engagement: "3.5%",
@@ -68,7 +68,7 @@ const Influencers = () => {
       name: "Olivia Wilson",
       handle: "@livtravel",
       avatar: "https://xsgames.co/randomusers/avatar.php?g=female&i=5",
-      grade: "B",
+      grade: "Macro",
       niche: "Travel",
       followers: "320K",
       engagement: "4.7%",
@@ -87,7 +87,7 @@ const Influencers = () => {
 
   // Filter options
   const niches = ["Fashion", "Fitness", "Food", "Technology", "Travel", "Beauty", "Lifestyle"];
-  const grades = ["A+", "A", "B+", "B", "C+", "C"];
+  const grades = ["Nano", "Micro", "Rising Star", "Mid-Tier", "Macro", "Mega", "Celebrity Lite", "Celebrity	", "Superstar", "Icon"];
   const followerRanges = [
     { id: "followers-1", label: "10K - 50K", range: [10000, 50000] },
     { id: "followers-2", label: "50K - 100K", range: [50000, 100000] },
